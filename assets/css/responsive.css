@@ -1,12 +1,18 @@
+
 /* PC */
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
 
 }
 
 /* tablet && mobile */
 
-@media (max-width: 1023px) {
+@media (max-width: 63.9375em) {
+    #content .content-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .btn {
         padding: 15px 16px;
     }
@@ -17,6 +23,11 @@
 
     .contact-form .form-control {
         padding: 15px;
+        font-size: 16px;
+    }
+
+    .contact-submit-btn {
+        font-size: 16px;
     }
     
     .contact-content .contact-info  {
@@ -39,15 +50,12 @@
 
 /* Tablet */
 
-@media (max-width: 1023px) and (min-width: 740px) {
-    #content .content-section {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+@media (max-width: 63.9375em) and (min-width: 46.25em) {
+    
 }
 
 /* mobile */
-@media (max-width: 739px) {
+@media (max-width: 46.1875em) {
     .s-full-width,
     .s-col-full {
         width: 100% !important;
@@ -93,15 +101,6 @@
     #nav .subnav a {
         color: #fff;
         padding: 5px 41px;
-    }
-
-    #slider .text-content {
-        display: none;
-    }
-
-    #content .content-section {
-        padding-left: 16px;
-        padding-right: 16px;
     }
 
     #content .member-img {

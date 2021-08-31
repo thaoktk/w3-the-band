@@ -60,11 +60,11 @@
                         </div>
                         <div class="col col-third s-col-full mt-32 text-center">
                             <div class="member-name">Anh</div>
-                            <img src="./assets/img/band/bandmember.jpg" alt="Thảo" class="member-img">
+                            <img src="./assets/img/band/bandmember.jpg" alt="Anh" class="member-img">
                         </div>
                         <div class="col col-third s-col-full mt-32 text-center">
                             <div class="member-name">Oanh</div>
-                            <img src="./assets/img/band/bandmember.jpg" alt="Thảo" class="member-img">
+                            <img src="./assets/img/band/bandmember.jpg" alt="Oanh" class="member-img">
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                                     <h3 class="place-heading">New York</h3>
                                     <p class="place-time">Fri 27 Nov 2016</p>
                                     <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <a href="" class="btn s-full-width text-center">Buy Tickets</a>
+                                    <button class="btn s-full-width text-center js-buy-ticket">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="col col-third s-col-full mt-16">
@@ -98,7 +98,7 @@
                                     <h3 class="place-heading">Paris</h3>
                                     <p class="place-time">Sat 28 Nov 2016</p>
                                     <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <a href="" class="btn s-full-width text-center">Buy Tickets</a>
+                                    <button class="btn s-full-width text-center js-buy-ticket">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="col col-third s-col-full mt-16">
@@ -107,7 +107,7 @@
                                     <h3 class="place-heading">San Fransicos</h3>
                                     <p class="place-time">Sun 29 Nov 2016</p>
                                     <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <a href="" class="btn s-full-width text-center">Buy Tickets</a>
+                                    <button class="btn s-full-width text-center js-buy-ticket">Buy Tickets</button>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                         <input type="text" name="Message" placeholder="Message" required class="form-control">
                                     </div>
                                 </div>
-                                <input type="submit" value="SEND" class="btn pull-right mt-16 s-full-width">
+                                <input type="submit" value="SEND" class="contact-submit-btn btn pull-right mt-16 s-full-width">
                             </form>
                         </div>
                     </div>
@@ -162,36 +162,36 @@
                 <p class="copyright">Powered by <a href="">w3.css</a></p>
             </div>
         </div>
-        <script>
-            var header = document.getElementById('header');
-            var mobileMenu = document.getElementById('mobile-menu');
-            var headerHeight = header.clientHeight;
-
-            mobileMenu.onclick = function () {
-                var isClosed = header.clientHeight === headerHeight;
-
-                if (isClosed) {
-                    header.style.height = 'auto';
-                } else {
-                    header.style.height = null;
-                }
-            }
-
-            var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
-
-            for (var i = 0; i < menuItems.length; i++) {
-                var menuItem = menuItems[i];
-
-                menuItem.onclick = function (event) {
-                    var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-
-                    if (isParentMenu) {
-                        event.preventDefault();
-                    } else {
-                        header.style.height = null;
-                    }
-                }
-            }
-        </script>
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+                <div class="modal-close js-modal-close">
+                    <i class="ti-close"></i>
+                </div>
+                <header class="modal-header">
+                    <i class="ti-bag"></i>
+                    Tickets
+                </header>
+                <div class="modal-body">
+                    <label for="quantity-input" class="modal-label">
+                        <i class="ti-shopping-cart"></i>
+                        Ticket, $15 per person
+                    </label>
+                    <input type="text" class="modal-input" id="quantity-input" placeholder="How many?">
+                    <label for="email-input" class="modal-label">
+                        <i class="ti-user"></i>
+                        Send to
+                    </label>
+                    <input type="email" class="modal-input" id="email-input" placeholder="Enter email...">
+                    <button id="buy-ticket">
+                        Pay <i class="ti-check"></i>
+                    </button>
+                </div>
+                <footer class="modal-footer">
+                    <p class="modal-help">Need <a href="">help?</a></p>
+                </footer>
+            </div>
+        </div>
+        <script src="./main.js"></script>
     </body>
 </html>
+

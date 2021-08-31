@@ -1,3 +1,4 @@
+
 /* reset css */
 * {
     padding: 0;
@@ -18,10 +19,8 @@ html {
 2. kích thước (width height)
 3. màu sắc
 4. kiểu dáng */
+
 /* Common */
-.clear {
-    clear: both;
-}
 
 .text-white {
     color: #fff !important;
@@ -44,6 +43,8 @@ html {
     margin-top: 15px;
     border-radius: 2px;
     border: none;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -93,9 +94,6 @@ html {
     margin-top: 32px !important;
 }
 
-#main {
-    
-}
 #header {
     height: 46px;
     background-color: #000;
@@ -199,8 +197,6 @@ html {
     cursor: pointer;
 }
 
-
-
 /* Slider */
 
 #slider {
@@ -226,11 +222,9 @@ html {
 #slider .text-description {
     font-size: 15px;
     margin-top: 25px;
+    text-shadow: 0 0 1px #000;
 }
 /* Content */
-#content {
-    
-} 
 
 #content .content-section {
     width: 800px;
@@ -242,7 +236,6 @@ html {
     /* padding-left: 16px;
     padding-right: 16px; */
 }
-
 
 #content .section-heading {
     font-weight: 500;
@@ -258,6 +251,7 @@ html {
     font-style: italic;
     opacity: 0.6;
 }
+
 /* Band */
 #content .about-text {
     text-align: justify;
@@ -278,6 +272,7 @@ html {
     width: 154px;
     border-radius: 4px;
 }
+
 /* Tour */
 .tour-content {
     background-color: #000;
@@ -350,7 +345,6 @@ html {
     line-height: 1.5;
 }
 
-
 /* Contact */
 
 .contact-content {
@@ -385,7 +379,7 @@ html {
     width: 100%;
     border: 1px solid #ccc;
 }
-/* <Map section */
+/* Map section */
 
 .map-section img {
     width: 100%;
@@ -401,6 +395,7 @@ html {
 #footer .socials-list {
     font-size: 24px;
 }
+
  #footer .socials-list a {
     text-decoration: none;
     color: rgba(0,0,0,0.6);
@@ -420,3 +415,115 @@ html {
  #footer .copyright a {
     color: rgba(0,0,0,0.6);
  }
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-container {
+    margin: auto;
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalOpen ease 0.5s;
+}
+
+.modal-header {
+    height: 130px;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    line-height: 130px;
+    background-color: #009688;
+}
+
+.modal-header i {
+    margin-right: 16px;
+}
+
+.modal-body {
+    padding: 0 16px;
+}
+
+.modal-label {
+    display: block;
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+.modal-input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    line-height: 20px;
+    border: 1px solid #ccc;
+}
+
+#buy-ticket {
+    margin: 10px 0;
+    padding: 16px;
+    background-color: #009688;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.modal-close:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+#buy-ticket:hover {
+    opacity: 0.9;
+}
+
+.modal-footer {
+    text-align: right;
+    padding: 16px;
+}
+
+.modal-help a {
+    color: #2196f3;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
